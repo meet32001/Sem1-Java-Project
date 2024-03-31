@@ -36,7 +36,7 @@ public class SilverMember extends MovieMembership {
     }
 
     public String returnMembershipRank() {
-        return "Silver";
+        return "\nMembership status: Silver";
     }
 
     public void purchaseMovieTicket(double ticketPrice, String nextMovie, String theatreType, int showHour,

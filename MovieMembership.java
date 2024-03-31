@@ -16,8 +16,7 @@ public abstract class MovieMembership {
         this.points = 0;
     }
 
-    MovieMembership(String memberName, String nextMovie, String theatreType, int showHour, int showMinute,
-            String snack) {
+    MovieMembership(String memberName, String nextMovie, String theatreType, int showHour, int showMinute,String snack) {
         this.memberName = memberName;
         this.nextMovie = nextMovie;
         this.theatreType = theatreType;
