@@ -2,19 +2,17 @@ import java.util.Scanner;
 
 public class GoldMember extends SilverMember implements VIPPrivilege {
     private static boolean validCredentials;
-    private static final double DISCOUNT_RATE = 0.25;
-    private static final double POINTS_RATE = 2.0;
     private static final int INITIAL_POINTS = 50;
 
     // Constructor 1
-    public GoldMember(String memberName, double discountRate, double pointsRate) {
-        super(memberName, discountRate, pointsRate); 
+    public GoldMember(String memberName) {
+        super(memberName, 0.25, 2.0); 
         validCredentials=false; // Set validCredentials to false
     }
 
     // Constructor 2
-    public GoldMember(String memberName, String nextMovie, String theatreType, int showHour, int showMinute, String snack, double discountRate, double pointsRate) {
-        super(memberName, nextMovie, theatreType, showHour, showMinute, snack, discountRate, pointsRate); // Invoke 8-argument constructor of SilverMember
+    public GoldMember(String memberName, String nextMovie, String theatreType, int showHour, int showMinute, String snack) {
+        super(memberName, nextMovie, theatreType, showHour, showMinute, snack, 0.25, 2.0); // Invoke 8-argument constructor of SilverMember
         validCredentials=false; // Set validCredentials to false
     }
 
