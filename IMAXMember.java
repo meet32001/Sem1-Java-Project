@@ -8,6 +8,7 @@ public class IMAXMember extends MovieMembership {
 
     IMAXMember(String memberName, String nextMovie, String theatreType, int showHour, int showMinute, String snack) {
         super(memberName, nextMovie, theatreType, showHour, showMinute, snack);
+        setpoint(INITIAL_POINTS);
     }
 
     public String getMemberDetails() {
@@ -16,12 +17,12 @@ public class IMAXMember extends MovieMembership {
 
     @Override
     public String returnMembershipRank() {
-        return "\nMembership status:IMAX";
+        return "IMAX Membership.";
     }
 
     @Override
     public void printMemberBenefits() {
-        System.out.println("Discount Rate: " + discountRate);
+        System.out.println("Discount Rate: " + discountRate + "%");
         System.out.println("Points Rate: " + pointsRate);
     }
 

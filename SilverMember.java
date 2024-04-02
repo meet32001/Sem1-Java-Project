@@ -31,12 +31,12 @@ public class SilverMember extends MovieMembership {
     }
 
     public void printMemberBenefits() {
-        System.out.println("Discounted Rate: " + discountRate);
+        System.out.println("Discounted Rate: " + discountRate + "%");
         System.out.println("Point Rate: " + pointsRate);
     }
 
     public String returnMembershipRank() {
-        return "\nMembership status: Silver";
+        return "Silver Membership.";
     }
 
     public void purchaseMovieTicket(double ticketPrice, String nextMovie, String theatreType, int showHour,
