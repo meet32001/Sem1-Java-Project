@@ -1,10 +1,15 @@
+/**
+ * MovieMembershipTest is a test class for exercising and demonstrating the
+ * functionality
+ * of the MovieMembership hierarchy.
+ */
 public class MovieMembershipTest {
 
     public static void main(String[] args) {
         // Create customer objects
-        SilverMember mySilver = new SilverMember("John", "Avengers: Endgame", "Standard", 19, 30, "Popcorn");
-        GoldMember myGold = new GoldMember("Alice", "The Lion King", "Standard", 18, 45, "Soda", 0.5, 1.5);
-        IMAXMember myIMAX = new IMAXMember("Bob", "Interstellar", "IMAX", 20, 0, "Nachos");
+        SilverMember mySilver = new SilverMember("Vivek", "Dil", "Standard", 19, 30, "Popcorn");
+        GoldMember myGold = new GoldMember("Ajay", "King", "Standard", 18, 45, "Soda", 0.5, 1.5);
+        IMAXMember myIMAX = new IMAXMember("Raj", "Hello", "IMAX", 20, 0, "Nachos");
 
         // Create an array of type MovieMembership
         MovieMembership[] movieMembershipArray = new MovieMembership[3];
@@ -34,21 +39,16 @@ public class MovieMembershipTest {
             System.out.println(purchaseDetail.getMemberDetails());
         }
 
-        // Check if the member is an instance of GoldMember and perform VIP actions
-        for (MovieMembership member : movieMembershipArray) {
-            if (member instanceof GoldMember) {
-                ((GoldMember) member).accessVIPLounge();
-                System.out.println(((GoldMember) member).purchaseAlcohol());
-                System.out.println(member.getMemberDetails());
-                System.out.println();
-            }
-        }
+        myGold.accessVIPLounge();
+        System.out.println(myGold.purchaseAlcohol());
+        System.out.println(myGold.getMemberDetails());
 
         // Additional ticket purchases for individual members
         mySilver.purchaseMovieTicket(7.89, "Suicide Squad", "Standard", 14, 25, "Smarties");
         myGold.purchaseMovieTicket(15.98, "The Big Short", "Standard", 13, 50, "Kitkat");
         myIMAX.purchaseMovieTicket(14.50, "Godzilla vs Kong", "IMAX", 15, 0, "Gummies");
-        
+
+        // Print updated details of each member
         System.out.println();
         System.out.println(mySilver.getMemberDetails());
         System.out.println();

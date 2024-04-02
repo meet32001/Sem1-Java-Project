@@ -1,33 +1,49 @@
 import java.util.Scanner;
 
+/**
+ * GoldMember represents a Gold level movie membership, extending SilverMember and implementing VIPPrivilege.
+ */
 public class GoldMember extends SilverMember implements VIPPrivilege {
+
+    // Member variables
     private static boolean validCredentials;
-    private static final int INITIAL_POINTS = 50;
 
     // Constructor 1
     public GoldMember(String memberName) {
-        super(memberName, 0.25, 2.0);
+        super(memberName, 0.25, 2.0); // Initialize with default discount and points rates
         validCredentials = false; // Set validCredentials to false
+        setPoints(50); 
     }
 
     // Constructor 2
     public GoldMember(String memberName, String nextMovie, String theatreType, int showHour, int showMinute,
-            String snack, double discountRate, double pointsRate) {
+                      String snack, double discountRate, double pointsRate) {
         super(memberName, nextMovie, theatreType, showHour, showMinute, snack, 0.25, 2.0);
         validCredentials = false; // Set validCredentials to false
-        setpoint(INITIAL_POINTS);
+        setPoints(50); // Initialize points
     }
 
+    /**
+     * Returns the membership rank of the Gold member.
+     * @return The membership rank
+     */
+    @Override
     public String returnMembershipRank() {
-        return "Gold Membership.";
+        return "Gold";
     }
 
-    // Override discount rate method from VIPPrivilege interface
+    /**
+     * Overrides the method to return member details.
+     * @return Details of the Gold membership
+     */
     @Override
     public String getMemberDetails() {
         return super.getMemberDetails();
     }
 
+    /**
+     * Allows access to the VIP lounge.
+     */
     @Override
     public void accessVIPLounge() {
         Scanner sc = new Scanner(System.in);
@@ -40,6 +56,10 @@ public class GoldMember extends SilverMember implements VIPPrivilege {
         }
     }
 
+    /**
+     * Purchases alcohol for Gold members if valid credentials are provided.
+     * @return A message indicating if the purchase was successful
+     */
     @Override
     public String purchaseAlcohol() {
         if (validCredentials) {
