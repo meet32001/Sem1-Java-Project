@@ -3,7 +3,7 @@ public class MovieMembershipTest {
     public static void main(String[] args) {
         // Create customer objects
         SilverMember mySilver = new SilverMember("John", "Avengers: Endgame", "Standard", 19, 30, "Popcorn");
-        GoldMember myGold = new GoldMember("Alice", "The Lion King", "Standard", 18, 45, "Soda",0.5,1.5);
+        GoldMember myGold = new GoldMember("Alice", "The Lion King", "Standard", 18, 45, "Soda", 0.5, 1.5);
         IMAXMember myIMAX = new IMAXMember("Bob", "Interstellar", "IMAX", 20, 0, "Nachos");
 
         // Create an array of type MovieMembership
@@ -46,15 +46,12 @@ public class MovieMembershipTest {
 
         // Additional ticket purchases for individual members
         mySilver.purchaseMovieTicket(7.89, "Suicide Squad", "Standard", 14, 25, "Smarties");
-        System.out.println(mySilver.getMemberDetails());
-        System.out.println();
-
         myGold.purchaseMovieTicket(15.98, "The Big Short", "Standard", 13, 50, "Kitkat");
-        System.out.println(myGold.getMemberDetails());
-        System.out.println();
-    
         myIMAX.purchaseMovieTicket(14.50, "Godzilla vs Kong", "IMAX", 15, 0, "Gummies");
+
+        System.out.println(mySilver.getMemberDetails());
+        System.out.println(myGold.getMemberDetails());
         System.out.println(myIMAX.getMemberDetails());
-        System.out.println();
+
     }
 }

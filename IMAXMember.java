@@ -12,7 +12,7 @@ public class IMAXMember extends MovieMembership {
     }
 
     public String getMemberDetails() {
-        return super.getMemberDetails() + " " + returnMembershipRank();
+        return super.getMemberDetails();
     }
 
     @Override
@@ -30,19 +30,21 @@ public class IMAXMember extends MovieMembership {
     public void purchaseMovieTicket(double ticketPrice, String nextMovie, String theatreType, int showHour,
             int showMinute, String snack) {
         double priceWithDiscount = 0.0;
+        int pointsEarned =0;
         setNextMovie(nextMovie);
         setTheatreType(theatreType);
         setSnack(snack);
+        setShowtime(showHour, showMinute);
+
 
         if (theatreType == "IMAX") {
-            priceWithDiscount = (ticketPrice * discountRate) / 100;
-            int pointsEarned = (int) (ticketPrice * pointsRate);
+            priceWithDiscount = ticketPrice - (ticketPrice * discountRate);
+            pointsEarned = (int) (ticketPrice * pointsRate);
             addPoints(pointsEarned);
-        }
 
-        System.out.println("The Movie " + getNextMovie() + " has been purchased by " + getMemberName() + " for "
-                + priceWithDiscount + " and will be showing at " + displayShowTime() + " with " + getTheatreType()
-                + " screening. They have earned " + getPoints() + " points");
+            System.out.println("The Movie " + getNextMovie() + " has been purchased by " + getMemberName() + " for "
+            + priceWithDiscount + " and will be showing at " + displayShowTime() + " with " + getTheatreType()
+            + " screening. They have earned " + pointsEarned + " points");
+        }  
     }
-
 }

@@ -16,7 +16,8 @@ public abstract class MovieMembership {
         this.points = 0;
     }
 
-    MovieMembership(String memberName, String nextMovie, String theatreType, int showHour, int showMinute,String snack) {
+    MovieMembership(String memberName, String nextMovie, String theatreType, int showHour, int showMinute,
+            String snack) {
         this.memberName = memberName;
         this.nextMovie = nextMovie;
         this.theatreType = theatreType;
@@ -75,10 +76,12 @@ public abstract class MovieMembership {
     }
 
     public String getMemberDetails() {
-        return "This membership card belongs to "+ memberName + ". They have "+ points+" points. Their next movie is "+ nextMovie +" at "+ displayShowTime()+ " with a "+theatreType+" screening. They will be having "+snack+" as a snack. They have ";
+        return "This membership card belongs to " + memberName + ". They have " + getPoints()
+                + " points. Their next movie is " + nextMovie + " at " + displayShowTime() + " with a " + theatreType
+                + " screening. They will be having " + snack + " as a snack. They have " + returnMembershipRank();
     }
-    
 
+    
     public abstract String returnMembershipRank();
 
     {

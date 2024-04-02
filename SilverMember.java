@@ -27,7 +27,7 @@ public class SilverMember extends MovieMembership {
     }
 
     public String getMemberDetails() {
-        return super.getMemberDetails() + " " +returnMembershipRank() ;
+        return super.getMemberDetails();
     }
 
     public void printMemberBenefits() {
@@ -44,11 +44,12 @@ public class SilverMember extends MovieMembership {
                 setNextMovie(nextMovie);
                 setTheatreType(theatreType);
                 setSnack(snack);
+                setShowtime(showHour,showMinute);
 
-                double priceWithDiscount = ticketPrice * (1 - discountRate);
+                double priceWithDiscount = ticketPrice - (ticketPrice * discountRate);
                 int pointsEarned = (int)(ticketPrice * pointsRate);
                 addPoints(pointsEarned);
 
-                System.out.println("The Movie " +getNextMovie()+" has been purchased by "+getMemberName()+" for "+ priceWithDiscount +" and will be showing at " + displayShowTime() +" with " + getTheatreType() + " screening. They have earned " + getPoints() + " points");
+                System.out.println("The Movie " +getNextMovie()+" has been purchased by "+getMemberName()+" for "+ priceWithDiscount +" and will be showing at " + displayShowTime() +" with " + getTheatreType() + " screening. They have earned " + pointsEarned + " points");
     }
 }

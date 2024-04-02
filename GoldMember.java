@@ -25,7 +25,7 @@ public class GoldMember extends SilverMember implements VIPPrivilege {
     // Override discount rate method from VIPPrivilege interface
     @Override
     public String getMemberDetails() {
-        return super.getMemberDetails() + " " + returnMembershipRank();
+        return super.getMemberDetails();
     }
 
     @Override
