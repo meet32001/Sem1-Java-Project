@@ -48,10 +48,13 @@ public class MovieMembershipTest {
         mySilver.purchaseMovieTicket(7.89, "Suicide Squad", "Standard", 14, 25, "Smarties");
         myGold.purchaseMovieTicket(15.98, "The Big Short", "Standard", 13, 50, "Kitkat");
         myIMAX.purchaseMovieTicket(14.50, "Godzilla vs Kong", "IMAX", 15, 0, "Gummies");
-
+        
+        System.out.println();
         System.out.println(mySilver.getMemberDetails());
+        System.out.println();
         System.out.println(myGold.getMemberDetails());
+        System.out.println();
         System.out.println(myIMAX.getMemberDetails());
-
+        System.out.println();
     }
 }
